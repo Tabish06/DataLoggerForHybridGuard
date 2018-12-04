@@ -25,14 +25,15 @@ class LogLoadTimesController < ApplicationController
   # POST /log_load_times
   # POST /log_load_times.json
   def create
-    byebug
+    # byebug
     @log_load_time = LogLoadTime.where(app_name: params['app_name']).first_or_create
-    @log_load_time.download_from_server_wo_hg = params['download_from_server_wo_hg']
-    @log_load_time.render_webpage_wo_hg = params['render_webpage_wo_hg']
-    @log_load_time.dom_wo_hg = params['dom_wo_hg']
-    @log_load_time.download_from_server_w_hg = params['download_from_server_w_hg']
-    @log_load_time.render_webpage_w_hg = params['render_webpage_w_hg']
-    @log_load_time.dom_w_hg = params['dom_w_hg']
+    # byebug
+    @log_load_time.download_from_server_wo_hg =  params['download_from_server_wo_hg'] || @log_load_time.download_from_server_wo_hg
+    @log_load_time.render_webpage_wo_hg =  params['render_webpage_wo_hg'] || @log_load_time.render_webpage_wo_hg
+    @log_load_time.dom_wo_hg = params['dom_wo_hg'] || @log_load_time.dom_wo_hg 
+    @log_load_time.download_from_server_w_hg = params['download_from_server_w_hg'] || @log_load_time.download_from_server_w_hg 
+    @log_load_time.render_webpage_w_hg = params['render_webpage_w_hg'] || @log_load_time.render_webpage_w_hg 
+    @log_load_time.dom_w_hg = params['dom_w_hg'] || @log_load_time.dom_w_hg 
     respond_to do |format|
       if @log_load_time.save
         format.html { redirect_to @log_load_time, notice: 'Log load time was successfully created.' }
