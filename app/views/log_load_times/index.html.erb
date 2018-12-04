@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Log Load Times</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @log_load_times.each do |log_load_time| %>
+      <tr>
+        <td><%= link_to 'Show', log_load_time %></td>
+        <td><%= link_to 'Edit', edit_log_load_time_path(log_load_time) %></td>
+        <td><%= link_to 'Destroy', log_load_time, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log Load Time', new_log_load_time_path %>

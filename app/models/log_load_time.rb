@@ -1,0 +1,2 @@
+class LogLoadTime < ApplicationRecord
+end
