@@ -25,9 +25,7 @@ class LogLoadTimesController < ApplicationController
   # POST /log_load_times
   # POST /log_load_times.json
   def create
-    # byebug
     @log_load_time = LogLoadTime.where(app_name: params['app_name']).first_or_create
-    # byebug
     @log_load_time.download_from_server_wo_hg =  params['download_from_server_wo_hg'] || @log_load_time.download_from_server_wo_hg
     @log_load_time.render_webpage_wo_hg =  params['render_webpage_wo_hg'] || @log_load_time.render_webpage_wo_hg
     @log_load_time.dom_wo_hg = params['dom_wo_hg'] || @log_load_time.dom_wo_hg 
