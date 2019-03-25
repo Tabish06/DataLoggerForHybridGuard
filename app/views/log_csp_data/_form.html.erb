@@ -1,0 +1,27 @@
+<%= form_with(model: log_csp_datum, local: true) do |form| %>
+  <% if log_csp_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(log_csp_datum.errors.count, "error") %> prohibited this log_csp_datum from being saved:</h2>
+
+      <ul>
+      <% log_csp_datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :appname %>
+    <%= form.text_field :appname, id: :log_csp_datum_appname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :errors %>
+    <%= form.text_area :errors, id: :log_csp_datum_errors %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

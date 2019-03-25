@@ -1,0 +1,2 @@
+class LogCspDatum < ApplicationRecord
+end

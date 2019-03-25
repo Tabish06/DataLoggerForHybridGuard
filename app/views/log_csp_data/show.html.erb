@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Appname:</strong>
+  <%= @log_csp_datum.appname %>
+</p>
+
+<p>
+  <strong>Errors:</strong>
+  <%= @log_csp_datum.errors %>
+</p>
+
+<%= link_to 'Edit', edit_log_csp_datum_path(@log_csp_datum) %> |
+<%= link_to 'Back', log_csp_data_path %>

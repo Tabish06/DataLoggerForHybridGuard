@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Log Csp Data</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Appname</th>
+      <th>Errors</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @log_csp_data.each do |log_csp_datum| %>
+      <tr>
+        <td><%= log_csp_datum.appname %></td>
+        <td><%= log_csp_datum.errors %></td>
+        <td><%= link_to 'Show', log_csp_datum %></td>
+        <td><%= link_to 'Edit', edit_log_csp_datum_path(log_csp_datum) %></td>
+        <td><%= link_to 'Destroy', log_csp_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Log Csp Datum', new_log_csp_datum_path %>
