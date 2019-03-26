@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190325152849) do
+ActiveRecord::Schema.define(version: 20190326171611) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "log_csp_data", force: :cascade do |t|
     t.string "appname"
-    t.text "errors"
+    t.text "errors_list"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

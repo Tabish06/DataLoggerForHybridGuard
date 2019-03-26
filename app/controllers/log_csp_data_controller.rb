@@ -27,11 +27,7 @@ class LogCspDataController < ApplicationController
   def create
     # @log_csp_datum = LogCspDatum.new(log_csp_datum_params)
     @log_csp_datum = LogCspDatum.where(appname: params['appname']).first_or_create
-    if @log_csp_datum.errors == ""
-      @log_csp_datum.errors = params['errors']
-    else
-      @log_csp_datum.errors = "," + params['errors']
-    end
+    @log_csp_datum.errors_list = params['errors']
     respond_to do |format|
       if @log_csp_datum.save
         format.html { redirect_to @log_csp_datum, notice: 'Log csp datum was successfully created.' }
