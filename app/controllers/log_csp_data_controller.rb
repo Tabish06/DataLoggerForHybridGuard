@@ -1,5 +1,6 @@
 class LogCspDataController < ApplicationController
   before_action :set_log_csp_datum, only: [:show, :edit, :update, :destroy]
+  skip_before_action :verify_authenticity_token  
 
   # GET /log_csp_data
   # GET /log_csp_data.json
