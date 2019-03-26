@@ -15,7 +15,7 @@
     <% @log_csp_data.each do |log_csp_datum| %>
       <tr>
         <td><%= log_csp_datum.appname %></td>
-        <td><%= log_csp_datum.errors %></td>
+        <td><%= log_csp_datum.errors_list %></td>
         <td><%= link_to 'Show', log_csp_datum %></td>
         <td><%= link_to 'Edit', edit_log_csp_datum_path(log_csp_datum) %></td>
         <td><%= link_to 'Destroy', log_csp_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
