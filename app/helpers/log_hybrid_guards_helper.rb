@@ -1,0 +1,2 @@
+module LogHybridGuardsHelper
+end

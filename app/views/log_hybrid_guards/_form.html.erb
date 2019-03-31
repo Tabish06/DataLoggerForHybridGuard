@@ -1,0 +1,32 @@
+<%= form_with(model: log_hybrid_guard, local: true) do |form| %>
+  <% if log_hybrid_guard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(log_hybrid_guard.errors.count, "error") %> prohibited this log_hybrid_guard from being saved:</h2>
+
+      <ul>
+      <% log_hybrid_guard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :app_name %>
+    <%= form.text_field :app_name, id: :log_hybrid_guard_app_name,value: params[:app_name] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :working %>
+    <%= form.check_box :working, id: :log_hybrid_guard_working %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comments %>
+    <%= form.text_area :comments, id: :log_hybrid_guard_comments %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

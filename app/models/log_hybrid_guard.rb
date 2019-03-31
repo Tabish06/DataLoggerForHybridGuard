@@ -1,0 +1,2 @@
+class LogHybridGuard < ApplicationRecord
+end

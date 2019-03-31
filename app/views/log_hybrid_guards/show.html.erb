@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>App name:</strong>
+  <%= @log_hybrid_guard.app_name %>
+</p>
+
+<p>
+  <strong>Working:</strong>
+  <%= @log_hybrid_guard.working %>
+</p>
+
+<p>
+  <strong>Comments:</strong>
+  <%= @log_hybrid_guard.comments %>
+</p>
+
+<%= link_to 'Edit', edit_log_hybrid_guard_path(@log_hybrid_guard) %> |
+<%= link_to 'Back', log_hybrid_guards_path %>
