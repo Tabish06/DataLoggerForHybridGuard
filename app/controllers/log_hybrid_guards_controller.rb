@@ -69,6 +69,6 @@ class LogHybridGuardsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def log_hybrid_guard_params
-      params.require(:log_hybrid_guard).permit(:app_name, :working, :comments)
+      params.require(:log_hybrid_guard).permit(:app_name, :working, :comments,:permissions,:plugins,:resource_apis)
     end
 end

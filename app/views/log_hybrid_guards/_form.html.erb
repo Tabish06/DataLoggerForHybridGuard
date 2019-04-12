@@ -13,18 +13,31 @@
 
   <div class="field">
     <%= form.label :app_name %>
-    <%= form.text_field :app_name, id: :log_hybrid_guard_app_name,value: params[:app_name] %>
+    <%= form.text_field :app_name, id: :log_hybrid_guard_app_name,value: (log_hybrid_guard.app_name || params[:app_name]) %>
   </div>
 
   <div class="field">
     <%= form.label :working %>
     <%= form.check_box :working, id: :log_hybrid_guard_working %>
   </div>
+  <div class="field">
+    <%= form.label :permissions %>
+    <%= form.text_area :permissions, id: :log_hybrid_guard_permissions,value: (log_hybrid_guard.permissions || params[:permissions]) %>
+  </div>
+  <div class="field">
+    <%= form.label :plugins %>
+    <%= form.text_area :plugins, id: :log_hybrid_guard_plugins,value: (log_hybrid_guard.plugins || params[:plugins]) %>
+  </div>
+  <div class="field">
+    <%= form.label :resource_apis %>
+    <%= form.text_area :resource_apis, id: :log_hybrid_guard_resource_apis,value:(log_hybrid_guard.resource_apis || params[:resource_apis]) %>
+  </div>
 
   <div class="field">
     <%= form.label :comments %>
     <%= form.text_area :comments, id: :log_hybrid_guard_comments %>
   </div>
+
 
   <div class="actions">
     <%= form.submit %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190326171611) do
+ActiveRecord::Schema.define(version: 20190412003656) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20190326171611) do
     t.text "errors_list"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "log_hybrid_guards", force: :cascade do |t|
+    t.string "app_name"
+    t.boolean "working"
+    t.text "comments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "permissions"
+    t.text "plugins"
+    t.text "resource_apis"
   end
 
   create_table "log_load_times", force: :cascade do |t|
